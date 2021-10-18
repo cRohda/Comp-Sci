@@ -1,6 +1,6 @@
 total = 0  # Creates variable to store total number of multiple
 userNum = int(input('Enter a number: '))  # takes an input from the user for their number
-four = range(1000,10000)  # creates a variable storing all the numbers between 1000-10000 (4 digit numbers)
+four = range(1000, 10000)  # creates a variable storing all the numbers between 1000-10000 (4 digit numbers)
 for x in four:  # set x to the next value in the range {four} each time through the loop
     divisible = x % userNum  # store modulo of x % userNum
     if divisible == 0:  # if the modulo of above is 0,

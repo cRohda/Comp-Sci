@@ -16,7 +16,7 @@ for i in List:  # For each value in list
         Decimal += 1
     elif type(List[x]) == list:
         Group += 1
-    if x <= len(List):  # if x is less than/equal too the length of the list
+    if x <= 6:  # if x is less than/equal too the length of the list
         x += 1  # add one fo x
     else:  # if x is more than the length of the list (this means it's tried every value)
         break  # end the loops

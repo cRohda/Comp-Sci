@@ -18,5 +18,5 @@ for x in List:  # Loop through trying each item in the list
     elif type(x) == list:  # If the item is a list add 1 to lists
         lists += 1
 
-# Print the totals
+# Print the total of each
 print(f'Strings: {strings}\nBooleans: {booleans}\nIntegers: {ints}\nFloats: {floats}\nLists: {lists}')

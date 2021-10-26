@@ -1,5 +1,4 @@
 phrase = list(input('Enter a word or sentence: '))  # Gets the users input of a sentence
-output = ""  # Creates the variable output, and makes it a empty string
 counter = 0  # Creates a variable to count the number of times through the loop
 # creates a range with the length of the user's phrase
 for i in phrase:  # Loops through assigning i to each num in this range

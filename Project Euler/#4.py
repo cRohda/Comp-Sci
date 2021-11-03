@@ -21,5 +21,3 @@ while Num1 < 994:
     Num1 += 1
 
 print(f"The largest palindrome is: {Highest}, Made with {M1} and {M2}")
-
-

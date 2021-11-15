@@ -37,3 +37,23 @@ print('8' + layers)  # Adds a different number and then the new string to the ne
 # Print multiple of the same string
 b = "Bloody Mary "
 print(b*3)
+
+# .upper
+c = 'hello'
+print(c.upper())  # prints the value but makes it uppercase letters
+
+# .lower
+d = 'GOODBYE'
+print(d.lower())  # prints the value but makes it lower case letters
+
+# These can also be used to store values, meaning it can be used in if statements too
+e = 'hello'
+if e.upper() == 'HELLO':
+    print('It is lowercase but i read it as uppercase')
+
+# .split
+f = 'Good Morning Ella!'
+print(f.split())  # Splits the string at every space (by default) into different values of a list
+flist = f.split()  # Stores the value of the list of the split string
+folist = f.split('o')  # Splits the string at the selected character. The selected value is removed in the list
+print(folist)

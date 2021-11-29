@@ -2,7 +2,7 @@ a = True  # Creates 2 true variables for loops
 b = True
 
 while a:  # While a is true, loop. Used to loop if there is less than 3 characters for input 1
-    word1 = input('Enter a word over 3 characters: ')  # Gets the users first word
+    word1 = input('Enter a word 3 or more characters: ')  # Gets the users first word
     if len(word1) >= 3:  # If the word is 3 or more characters
         a = False  # set a to false, so it doesn't get the input again
 

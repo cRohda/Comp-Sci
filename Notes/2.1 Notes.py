@@ -57,9 +57,3 @@ print(f.split())  # Splits the string at every space (by default) into different
 flist = f.split()  # Stores the value of the list of the split string
 folist = f.split('o')  # Splits the string at the selected character. The selected value is removed in the list
 print(folist)
-
-old = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-       'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-new = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n',
-       'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']

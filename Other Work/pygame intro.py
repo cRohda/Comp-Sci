@@ -7,10 +7,6 @@ from pygame.locals import (
     K_DOWN,
     K_LEFT,
     K_RIGHT,
-    K_W,
-    K_A,
-    K_S,
-    K_D,
     K_ESCAPE,
     KEYDOWN,
     QUIT,
@@ -28,13 +24,13 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect()
 
     def update(self, pressed_keys):
-        if pressed_keys[K_UP] or pressed_keys[K_W]:
+        if pressed_keys[K_UP]:
             self.rect.move_ip(0, -5)
-        if pressed_keys[K_DOWN] or pressed_keys[K_S]:
+        if pressed_keys[K_DOWN]:
             self.rect.move_ip(0, 5)
-        if pressed_keys[K_LEFT] or pressed_keys[K_A]:
+        if pressed_keys[K_LEFT]:
             self.rect.move_ip(-5, 0)
-        if pressed_keys[K_RIGHT] or pressed_keys[K_D]:
+        if pressed_keys[K_RIGHT]:
             self.rect.move_ip(5, 0)
 
         if self.rect.left < 0:

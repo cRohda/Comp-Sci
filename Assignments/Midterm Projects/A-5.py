@@ -13,9 +13,9 @@ sorted_list = []  # Creates empty list 'sorted_list'
 while len(even_list) > 0:  # Loops as long as there are values in even_list
     smallest = even_list[0]  # Sets variable smallest to the 0 index of even_list
     for i in even_list:  # iterates through the values remaining in even_list, assigning i to each one
-        if i < smallest:  # if i is less than smallest:
+        if i < smallest:  # if "i" is less than smallest:
 
-            # then i is the smallest number, this will go through every number to find the smallest number in the list
+            # then 'i' is the smallest number, this will go through every number to find the smallest number in the list
             smallest = i
 
     sorted_list.append(smallest)  # add the next smallest number to the new list

@@ -1,4 +1,4 @@
-list1 = [15, -2, 10, -5, -4, 6, 3, -1, -8, 13, -12, -11, 7, 14]  # Base list
+list1 = [15, -1, 11, -5, -5, 5, 3, -1, -7, 13, -11, -11, 7, 13]  # Base list
 even_list = []  # Creates blank list
 
 # Problem 3 code

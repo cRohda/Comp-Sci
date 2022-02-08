@@ -1,0 +1,9 @@
+- This directory contains my final project for BC High computer programming
+- Multiple Files are used, they must be stored in the same directory. Run the file 'main.py'
+- The files that should be there are
+    - main.py  (executes functions and other main code)
+    - func.py  (stores functions to be used during the game)
+    - README.txt
+- With any of these files missing the program will likely not run correctly
+
+HOW IT WORKS:

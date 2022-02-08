@@ -48,23 +48,27 @@ def turn(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: str)
     while True:
         choice = int(input('Where would you like to go?: '))
 
-        if choice == 1 and a != ' ':
+        if choice == 1 and a != '1':
             print('That spot is occupied, please choose another\n')
-        elif choice == 2 and b != ' ':
+        elif choice == 2 and b != '2':
             print('That spot is occupied, please choose another\n')
-        elif choice == 3 and c != ' ':
+        elif choice == 3 and c != '3':
             print('That spot is occupied, please choose another\n')
-        elif choice == 4 and d != ' ':
+        elif choice == 4 and d != '4':
             print('That spot is occupied, please choose another\n')
-        elif choice == 5 and e != ' ':
+        elif choice == 5 and e != '5':
             print('That spot is occupied, please choose another\n')
-        elif choice == 6 and f != ' ':
+        elif choice == 6 and f != '6':
             print('That spot is occupied, please choose another\n')
-        elif choice == 7 and g != ' ':
+        elif choice == 7 and g != '7':
             print('That spot is occupied, please choose another\n')
-        elif choice == 8 and h != ' ':
+        elif choice == 8 and h != '8':
             print('That spot is occupied, please choose another\n')
-        elif choice == 9 and i != ' ':
+        elif choice == 9 and i != '9':
             print('That spot is occupied, please choose another\n')
+        elif choice > 9:
+            print('That spot does not exist, please choose another')
+        elif choice < 1:
+            print('That spot does not exist, please choose another')
         else:
             return choice

@@ -1,13 +1,13 @@
 import func as f
 from time import sleep
 import webbrowser as w
-
-spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9 = ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+import sys
 
 print('Welcome to python Tic Tac Toe (Version 0.0.1 Alpha)! A final project for Computer Programming by Cormac Rohda!\n'
       'To start please tell me ', end='')
 
 while True:
+    spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9 = ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
     players = input('how many players are playing today? (1/2): ')
 
     f.fewlines()
@@ -24,7 +24,9 @@ while True:
     elif players == '2':
         print('You selected: TWO PLAYERS')
 
-        for rounds in range(1, 10):
+        rounds = 1
+        winner = False
+        while rounds < 10:
             if rounds % 2 == 0:
                 player = 'O'
             elif rounds % 2 != 0:
@@ -33,8 +35,10 @@ while True:
                 print(f'ERROR IN ROUND NUMBER {rounds}')
                 break
 
+            rounds += 1
+
             f.clearconsole()
-            f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+            print(f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9))
             spot = f.turn(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
             if spot == 1:
                 spot1 = player
@@ -55,10 +59,24 @@ while True:
             elif spot == 9:
                 spot9 = player
 
-            if rounds >= 5:
-                print('tested for win')
-                f.wintest(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
             f.clearconsole()
+
+            if rounds >= 5:
+                f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                rounds = f.wintest(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9, rounds)
+                if rounds == 11:
+                    winner = True
+                    break
+
+        if not winner:
+            print('GAME OVER!\nThe Game was a tie')
+        while True:
+            again = input('Would you like to play again? (Y/N): ')
+            if again.lower() == 'y':
+                f.clearconsole()
+                break
+            else:
+                sys.exit('Thank you for playing!')
 
     elif players == '0':
         print('You selected: ZERO PLAYERS')

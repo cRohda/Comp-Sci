@@ -34,9 +34,11 @@ while True:
                 player = 'O'
                 print('Computers turn\nThinking...')
                 sleep(1)
-                spot = AI.aicheck(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
                 if spot == 10:
-                    spot = f.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                    spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                    if spot == 10:
+                        spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
 
             elif rounds % 2 != 0:
                 player = 'X'
@@ -66,9 +68,10 @@ while True:
             elif spot == 9:
                 spot9 = player
 
-            rounds += 1
-
             f.clearconsole()
+            if rounds % 2 == 0:
+                print(f'Computer chose spot: {spot}\n')
+            rounds += 1
 
             if rounds >= 5:
                 f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
@@ -76,7 +79,7 @@ while True:
                 if rounds == 11:
                     winner = True
                     break
-                    11
+
         if not winner:
             print('GAME OVER!\nThe Game was a tie')
         while True:
@@ -105,6 +108,7 @@ while True:
             print(f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9))
             print(f"Player {player}'s turn")
             spot = f.turn(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+
             if spot == 1:
                 spot1 = player
             elif spot == 2:
@@ -145,6 +149,74 @@ while True:
 
     elif players == '0':
         print('You selected: ZERO PLAYERS')
+
+        while rounds < 10:
+            f.clearconsole()
+            print(f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9))
+
+            if rounds % 2 == 0:
+                player = 'O'
+                print('Computers turn\nThinking...')
+                sleep(1)
+                spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                if spot == 10:
+                    spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                    if spot == 10:
+                        spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+
+            elif rounds % 2 != 0:
+                player = 'X'
+                print('Computers turn\nThinking...')
+                sleep(1)
+                spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                if spot == 10:
+                    spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                    if spot == 10:
+                        spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+
+            else:
+                print(f'ERROR IN ROUND NUMBER {rounds}')
+                break
+
+            if spot == 1:
+                spot1 = player
+            elif spot == 2:
+                spot2 = player
+            elif spot == 3:
+                spot3 = player
+            elif spot == 4:
+                spot4 = player
+            elif spot == 5:
+                spot5 = player
+            elif spot == 6:
+                spot6 = player
+            elif spot == 7:
+                spot7 = player
+            elif spot == 8:
+                spot8 = player
+            elif spot == 9:
+                spot9 = player
+
+            f.clearconsole()
+            print(f'Computer chose spot: {spot}\n')
+            rounds += 1
+
+            if rounds >= 5:
+                f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                rounds = f.wintest(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9, rounds)
+                if rounds == 11:
+                    winner = True
+                    break
+
+        if not winner:
+            print('GAME OVER!\nThe Game was a tie')
+        while True:
+            again = input('Would you like to play again? (Y/N): ')
+            f.clearconsole()
+            if again.lower() == 'y':
+                break
+            else:
+                sys.exit('Thank you for playing!')
 
     elif players.lower() == 'rick':
         url = 'https://ponjo.club/reflux'

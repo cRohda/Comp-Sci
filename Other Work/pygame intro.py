@@ -14,6 +14,7 @@ from pygame.locals import (
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
+score = 0
 
 
 class Player(pygame.sprite.Sprite):
@@ -59,7 +60,6 @@ class Enemy(pygame.sprite.Sprite):
     def update(self):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right < 0:
-            self.kill()
 
 
 class Cloud(pygame.sprite.Sprite):
@@ -67,7 +67,6 @@ class Cloud(pygame.sprite.Sprite):
         super(Cloud, self).__init__()
         self.surf = pygame.image.load("cloud.png").convert()
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
-        # The starting position is randomly generated
         self.rect = self.surf.get_rect(
             center=(
                 random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100),

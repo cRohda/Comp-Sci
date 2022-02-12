@@ -85,25 +85,3 @@ def turn(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: str)
         else:
             return choice
 
-
-def random(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: str) -> int:
-    spot = r.randint(1, 9)
-
-    if spot == 1 and a == ' ':
-        return 1
-    elif spot == 2 and b == ' ':
-        return 2
-    elif spot == 3 and c == ' ':
-        return 3
-    elif spot == 4 and b == ' ':
-        return 4
-    elif spot == 5 and b == ' ':
-        return 5
-    elif spot == 6 and b == ' ':
-        return 6
-    elif spot == 7 and b == ' ':
-        return 7
-    elif spot == 8 and b == ' ':
-        return 8
-    elif spot == 9 and b == ' ':
-        return 9

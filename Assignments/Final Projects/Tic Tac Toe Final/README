@@ -1,8 +1,11 @@
 - This directory contains my final project for BC High computer programming
 - Multiple Files are used, they must be stored in the same directory. Run the file 'main.py'
 - The files that should be there are
-    - main.py  (executes functions and other main code)
-    - func.py  (stores functions to be used during the game)
+    - main.py    (executes functions and other main code)
+    - func.py    (stores functions to be used during the game)
+    - AI.py      (stores functions for AI use)
+    - window.py  (runs code to open and interact with window)
+    - Goals.txt
     - README.txt
 - With any of these files missing the program will likely not run correctly
 

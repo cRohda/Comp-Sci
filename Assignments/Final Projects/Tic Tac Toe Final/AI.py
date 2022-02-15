@@ -128,23 +128,27 @@ def aiattack(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: 
 
 
 def random(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: str) -> int:
-    spot = r.randint(1, 9)
+    while True:
 
-    if spot == 1 and a == ' ':
-        return 1
-    elif spot == 2 and b == ' ':
-        return 2
-    elif spot == 3 and c == ' ':
-        return 3
-    elif spot == 4 and d == ' ':
-        return 4
-    elif spot == 5 and e == ' ':
-        return 5
-    elif spot == 6 and f == ' ':
-        return 6
-    elif spot == 7 and g == ' ':
-        return 7
-    elif spot == 8 and h == ' ':
-        return 8
-    elif spot == 9 and i == ' ':
-        return 9
+        spot = r.randint(1, 9)
+
+        if spot == 1 and a == ' ':
+            return 1
+        elif spot == 2 and b == ' ':
+            return 2
+        elif spot == 3 and c == ' ':
+            return 3
+        elif spot == 4 and d == ' ':
+            return 4
+        elif spot == 5 and e == ' ':
+            return 5
+        elif spot == 6 and f == ' ':
+            return 6
+        elif spot == 7 and g == ' ':
+            return 7
+        elif spot == 8 and h == ' ':
+            return 8
+        elif spot == 9 and i == ' ':
+            return 9
+        else:
+            pass

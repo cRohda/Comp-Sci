@@ -156,27 +156,21 @@ while True:
 
             if rounds % 2 == 0:
                 player = 'O'
-                print('Computers turn\nThinking...')
-                sleep(1)
-                spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
-                if spot == 10:
-                    spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
-                    if spot == 10:
-                        spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
 
             elif rounds % 2 != 0:
                 player = 'X'
-                print('Computers turn\nThinking...')
-                sleep(1)
-                spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
-                if spot == 10:
-                    spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
-                    if spot == 10:
-                        spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
 
             else:
                 print(f'ERROR IN ROUND NUMBER {rounds}')
                 break
+
+            print('Computers turn\nThinking...')
+            sleep(1)
+            spot = AI.aiattack(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+            if spot == 10:
+                spot = AI.aidefend(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
+                if spot == 10:
+                    spot = AI.random(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9)
 
             if spot == 1:
                 spot1 = player
@@ -209,6 +203,7 @@ while True:
                     break
 
         if not winner:
+            print(f.boardupdate(spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9))
             print('GAME OVER!\nThe Game was a tie')
         while True:
             again = input('Would you like to play again? (Y/N): ')

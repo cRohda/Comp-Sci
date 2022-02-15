@@ -21,35 +21,43 @@ def fewlines():
 
 def wintest(a: str, b: str, c: str, d: str, e: str, f: str, g: str, h: str, i: str, roundnumber: int) -> int:
     if a == b and a == c and a != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {a}')
         return 11
     elif d == e and d == f and d != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {d}')
         return 11
     elif g == h and g == i and g != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {g}')
         return 11
     elif a == d and a == g and a != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {a}')
         return 11
     elif b == e and b == h and b != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {b}')
         return 11
     elif c == f and c == i and c != ' ':
-        fewlines()
+        clearconsole()
+        boardupdate(a, b, c, d, e, f, g, h, i)
         print(f'GAME OVER!\nThe Winner is {c}')
         return 11
     elif a == e and a == i and a != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {a}')
         return 11
     elif c == e and c == g and c != ' ':
-        fewlines()
+        clearconsole()
+        print(boardupdate(a, b, c, d, e, f, g, h, i))
         print(f'GAME OVER!\nThe Winner is {c}')
         return 11
     else:

@@ -1,13 +1,20 @@
-class Student:
-    def __init__(self, fname, id_num):
-        self.fn = fname
-        self.id = id_num
+from math import hypot
 
 
-s1 = Student('John', 111)
-s2 = Student('Emmanuel', 112)
-s3 = Student('Luke', 113)
+class Point:
+    def __init__(self, x_coord = 0, y_coord = 0 ):
+        self.x = x_coord
+        self.y = y_coord
 
-print(s1)
-print(s2.fn)
-print(s3.id)
+
+p1 = Point(3, 5)
+p2 = Point(6, -1)
+p3 = Point(10, 7)
+
+
+def length(a, b):
+    return hypot((b.x - a.x), (b.y - a.y))
+
+
+perimeter = length(p1, p2) + length(p2, p3) + length(p3, p1)
+print(perimeter)

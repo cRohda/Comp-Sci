@@ -11,6 +11,8 @@ winner = None
 tie = None
 white = (255, 255, 255)
 black = (0, 0, 0)
+COORD_MOD = 70
+but_win = 'o'
 
 # Sets board as 3 rows of the 3
 board = [[None] * 3, [None] * 3, [None] * 3]
@@ -25,18 +27,18 @@ display = pygame.display.set_mode((width, height + 100), 0, 32)
 pygame.display.set_caption("Pygame TicTacToe by Cormac")
 
 # import sprites
-outline = pygame.image.load("title.png")
+title = pygame.image.load("title.png")
 x_sprite = pygame.image.load("X.png")
 o_sprite = pygame.image.load("O.png")
 
 # resize sprites
-outline = pygame.transform.scale(outline, (width, height + 100))
+title = pygame.transform.scale(title, (width, height + 100))
 x_sprite = pygame.transform.scale(x_sprite, (80, 80))
 o_sprite = pygame.transform.scale(o_sprite, (80, 80))
 
 
 def window_init():
-    display.blit(outline, (0, 0))
+    display.blit(title, (0, 0))
 
     pygame.display.update()
     time.sleep(3)
@@ -52,11 +54,13 @@ def window_init():
 
 def tie_check():
     global tie
+    global but_win
+    message = 'nul'
 
     if winner is None:
         message = f"{turn.upper()}'s turn"
-    else:
-        message = f"{winner.upper()} won!"
+    elif winner is not None:
+        message = f"{but_win.upper()} won the game!"
     if tie:
         message = "Game ended in a tie"
 
@@ -64,8 +68,8 @@ def tie_check():
 
     text = font.render(message, True, white)
 
-    display.fill(black, (0, 400, 500, 100))
-    text_rect = text.get_rect(center=(width / 2, 500 - 50))
+    display.fill(black, (width / 2 - 150, height, 300, 50))
+    text_rect = text.get_rect(center=(width / 2, height + 25))
     display.blit(text, text_rect)
     pygame.display.update()
 
@@ -103,36 +107,38 @@ def win_test():
 
 
 def drawturn(row, col):
-    global board, turn
+    global board, turn, but_win
+    pos_x, pos_y = 0, 0
 
     if row == 1:
-        pos_x = 30
+        pos_x = COORD_MOD
 
     if row == 2:
-        pos_x = width / 3 + 30
+        pos_x = width / 3 + COORD_MOD
 
     if row == 3:
-        pos_x = width / 3 * 2 + 30
+        pos_x = width / 3 * 2 + COORD_MOD
 
     if col == 1:
-        pos_y = 30
+        pos_y = COORD_MOD
 
     if col == 2:
-        pos_y = height / 3 + 30
+        pos_y = height / 3 + COORD_MOD
 
     if col == 3:
-        pos_y = height / 3 * 2 + 30
+        pos_y = height / 3 * 2 + COORD_MOD
 
     board[row-1][col-1] = turn
 
     if turn == 'x':
-
         display.blit(x_sprite, (pos_y, pos_x))
         turn = 'o'
+        but_win = 'x'
 
     else:
         display.blit(o_sprite, (pos_y, pos_x))
         turn = 'x'
+        but_win = 'o'
 
     pygame.display.update()
 

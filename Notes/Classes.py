@@ -1,20 +1,9 @@
-from math import hypot
+class Bank:
 
+    def __init__(self, name='none'):
+        self.balance = None
+        self.name = name
 
-class Point:
-    def __init__(self, x_coord = 0, y_coord = 0 ):
-        self.x = x_coord
-        self.y = y_coord
+    def set_bal(self, balance=0):
+        self.balance = balance
 
-
-p1 = Point(3, 5)
-p2 = Point(6, -1)
-p3 = Point(10, 7)
-
-
-def length(a, b):
-    return hypot((b.x - a.x), (b.y - a.y))
-
-
-perimeter = length(p1, p2) + length(p2, p3) + length(p3, p1)
-print(perimeter)

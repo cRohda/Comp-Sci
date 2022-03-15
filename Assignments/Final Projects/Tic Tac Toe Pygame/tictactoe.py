@@ -77,6 +77,7 @@ def tie_check():
 def win_test():
     global board, winner, tie
 
+    # Test wins in row
     for row in range(0, 3):
         if (board[row][0] == board[row][1] == board[row][2]) and (board[row][0] is not None):
             winner = board[row][0]
@@ -86,21 +87,26 @@ def win_test():
                              4)
             break
 
+    # Test wins in column
     for col in range(0, 3):
         if (board[0][col] == board[1][col] == board[2][col]) and (board[0][col] is not None):
             winner = board[0][col]
-            pygame.draw.line(display, (250, 0, 0), ((col + 1) * width / 3 - width / 6, 0),
-                             ((col + 1) * width / 3 - width / 6, height), 4)
+            pygame.draw.line(display, (250, 0, 0),
+                             ((col + 1) * width / 3 - width / 6, 0),
+                             ((col + 1) * width / 3 - width / 6, height),
+                             4)
             break
 
+    # Test wins in diagonal
     if (board[0][0] == board[1][1] == board[2][2]) and (board[0][0] is not None):
         winner = board[0][0]
-        pygame.draw.line(display, (250, 70, 70), (50, 50), (350, 350), 4)
+        pygame.draw.line(display, (250, 70, 70), (50, 50), (600, 600), 4)
 
     if (board[0][2] == board[1][1] == board[2][0]) and (board[0][2] is not None):
         winner = board[0][2]
-        pygame.draw.line(display, (250, 70, 70), (350, 50), (50, 350), 4)
+        pygame.draw.line(display, (250, 70, 70), (650, 50), (50, 600), 4)
 
+    # If all are filled then tie
     if all([all(row) for row in board]) and winner is None:
         tie = True
     tie_check()

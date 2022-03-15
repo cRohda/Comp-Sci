@@ -15,6 +15,8 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 running = True
 players = 0
+message = 'Welcome to Tic Tac Toe!'
+total_turns = 0
 
 
 # sets board
@@ -68,15 +70,14 @@ def game_start():
 
 
 def message_status():
-    global tie
-    message = 'Welcome to Tic Tac Toe!'
+    global tie, message
 
-    if tie:
-        message = "The game is a tie"
     if winner is False:
         message = f"{turn.upper()}'s turn"
     elif winner == 'x' or 'o':
         message = f"{winner.upper()} won the game!"
+    if tie:
+        message = "The game is a tie"
 
     font = pg.font.Font(None, 30)
     text = font.render(message, True, WHITE)
@@ -88,7 +89,8 @@ def message_status():
 
 
 def is_winner():
-    global board, winner, tie
+    global board, winner, tie, message, total_turns
+    print(total_turns)
 
     # Test for wins in rows
     for row in range(0, 3):
@@ -117,14 +119,15 @@ def is_winner():
         winner = board[0][2]
         pg.draw.line(canvas, (250, 70, 70), (650, 50), (50, 600), 4)
 
-    if all([all(row) for row in board]) and winner is None:
+    if total_turns == 9 and winner is False:
         tie = True
     message_status()
 
 
 def mark_turn(row, col):
-    global board, turn
+    global board, turn, total_turns
     posx, posy = 0, 0
+    total_turns += 1
 
     # pick coords based off of spot
     if row == 1:
@@ -222,13 +225,14 @@ def computer_move(game):
 
 
 def reset():
-    global board, winner, turn, tie, players
+    global board, winner, turn, tie, players, total_turns
     sleep(3)
     turn = 'x'
     tie = False
     winner = False
     board = [[None] * 3, [None] * 3, [None] * 3]
     players = 0
+    total_turns = 0
     menu_screen()
 
 

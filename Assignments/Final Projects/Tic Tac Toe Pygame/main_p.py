@@ -90,7 +90,6 @@ def message_status():
 
 def is_winner():
     global board, winner, tie, message, total_turns
-    print(total_turns)
 
     # Test for wins in rows
     for row in range(0, 3):
@@ -157,6 +156,9 @@ def mark_turn(row, col):
         turn = 'x'
 
     pg.display.update()
+    print('\n' * 25)
+    for i in board:
+        print(i)
 
 
 def game_click():

@@ -4,6 +4,7 @@ from pygame.locals import *
 import sys
 import AI
 from pygame import mixer
+import random as r
 
 # Variables
 HEIGHT = 700
@@ -23,6 +24,8 @@ total_turns = 0
 
 # sets board
 board = [[None] * 3, [None] * 3, [None] * 3]
+
+songs = ['Song1.wav', 'Song2.wav', 'Song3.wav', 'Song4.wav']
 
 # Init pygame
 pg.init()
@@ -261,6 +264,7 @@ def computer_move(game):
 # reset the game
 def reset():
     global board, winner, turn, tie, players, total_turns
+
     # wait 3 seconds to show there is a winner
     sleep(3)
     turn = 'x'
@@ -269,16 +273,22 @@ def reset():
     board = [[None] * 3, [None] * 3, [None] * 3]
     players = 0
     total_turns = 0
+
     # go back to the menu screen
     menu_screen()
 
 
+# function to choose and play a new song
+def new_song():
+    global songs
+    music = r.choice(songs)
+    mixer.music.load(music)
+    mixer.music.play(-1)
+
+
+new_song()
 # start the game
 menu_screen()
-# play background music
-mixer.music.load("background.wav")
-mixer.music.play(-1)
-
 
 # Game loop
 while running:

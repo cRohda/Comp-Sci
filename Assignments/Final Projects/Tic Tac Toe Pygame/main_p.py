@@ -25,7 +25,7 @@ total_turns = 0
 # sets board
 board = [[None] * 3, [None] * 3, [None] * 3]
 
-songs = ['Song1.wav', 'Song2.wav', 'Song3.wav', 'Song4.wav']
+songs = ['song1.wav', 'song2.wav', 'song3.wav', 'song4.wav']
 
 # Init pygame
 pg.init()
@@ -278,7 +278,7 @@ def reset():
     menu_screen()
 
 
-# function to choose and play a new song
+# function to choose and play a new song (random choice)
 def new_song():
     global songs
     music = r.choice(songs)

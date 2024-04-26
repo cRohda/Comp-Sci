@@ -59,8 +59,6 @@ class Enemy(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.move_ip(-self.speed, 0)
-        if self.rect.right < 0:
-
 
 class Cloud(pygame.sprite.Sprite):
     def __init__(self):
